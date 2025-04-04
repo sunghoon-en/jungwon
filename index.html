@@ -1,150 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habit Tracker</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&family=Poppins:ital,wght@1,600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Tracker</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500&family=Poppins:ital,wght@1,600&display=swap');
 
-        body {
-            font-family: 'Edu TAS Beginner', cursive;
-            background: transparent;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-        .container {
-            background: transparent;
-            padding: 20px;
-            text-align: center;
-            width: 320px;
-            transition: box-shadow 0.3s ease-in-out;
-            box-shadow: 0 0 20px #ff99b3;
-        }
-        h1 {
-            margin-bottom: 10px;
-            color: white;
-        }
-        .habit {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 10px 0;
-            font-weight: 400;
-            font-size: 22px;
-            color: white;
-        }
-        input[type="checkbox"] {
-            appearance: auto;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        input[type="checkbox"]:checked {
-            transform: scale(1.2);
-        }
-        .progress-bar {
-            height: 20px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-        .progress-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(to right, #ffc0cb, #ff69b4);
-            transition: width 0.3s ease-in-out;
-        }
-        .quote {
-            margin-top: 15px;
-            font-size: 16px;
-            font-family: 'Poppins', sans-serif;
-            font-style: italic;
-            font-weight: 600;
-            display: none;
-            color: white;
-        }
-        .streak {
-            margin-top: 10px;
-            font-size: 16px;
-            color: white;
-        }
-    </style>
+    body {
+      font-family: 'Edu TAS Beginner', cursive;
+      background: transparent !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .container {
+      background: transparent !important;
+      padding: 20px;
+      text-align: center;
+      width: 320px;
+      transition: box-shadow 0.3s ease-in-out;
+      box-shadow: 0 0 20px #ff99b3;
+    }
+    h1 {
+      margin-bottom: 10px;
+      color: white !important;
+    }
+    .habit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+      font-weight: 400;
+      font-size: 22px;
+      color: white !important;
+    }
+    input[type="checkbox"] {
+      appearance: auto;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    input[type="checkbox"]:checked {
+      transform: scale(1.2);
+    }
+    .progress-bar {
+      height: 20px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2) !important;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, #ffc0cb, #ff69b4) !important;
+      transition: width 0.3s ease-in-out;
+    }
+    .quote {
+      margin-top: 15px;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      display: none;
+      color: white !important;
+    }
+    .streak {
+      margin-top: 10px;
+      font-size: 16px;
+      color: white !important;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Habit Tracker</h1>
-        <div class="habit"><input type="checkbox"> Mental Math</div>
-        <div class="habit"><input type="checkbox"> Stretching</div>
-        <div class="habit"><input type="checkbox"> Math Revision</div>
-        <div class="habit"><input type="checkbox"> Chemistry Revision</div>
-        <div class="habit"><input type="checkbox"> Physics Revision</div>
-        <div class="habit"><input type="checkbox"> Self-Study</div>
+  <div class="container">
+    <h1>Habit Tracker</h1>
+    <div class="habit"><input type="checkbox"> Mental Math</div>
+    <div class="habit"><input type="checkbox"> Stretching</div>
+    <div class="habit"><input type="checkbox"> Math Revision</div>
+    <div class="habit"><input type="checkbox"> Chemistry Revision</div>
+    <div class="habit"><input type="checkbox"> Physics Revision</div>
+    <div class="habit"><input type="checkbox"> Self-Study</div>
 
-        <div class="progress-bar">
-            <div class="progress-fill"></div>
-        </div>
-
-        <div class="quote"></div>
-        <div class="streak">🔥 Streak: <span id="streak-count">0</span> days</div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
     </div>
 
-    <script>
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        const progressFill = document.querySelector('.progress-fill');
-        const quote = document.querySelector('.quote');
-        const streakCount = document.getElementById('streak-count');
-        const container = document.querySelector('.container');
+    <div class="quote"></div>
+    <div class="streak">🔥 Streak: <span id="streak-count">0</span> days</div>
+  </div>
 
-        const quotes = [
-            "You're on fire, future ranker!",
-            "Every checkbox is one step closer to IIT.",
-            "You’ve got the grit, now let’s get the rank!",
-            "Consistency creates toppers, and you’re consistent AF.",
-            "One more day closer to CS @ IIT B, Lurang."
-        ];
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const progressFill = document.querySelector('.progress-fill');
+    const quote = document.querySelector('.quote');
+    const streakCount = document.getElementById('streak-count');
+    const container = document.querySelector('.container');
 
-        let streak = localStorage.getItem('streak') ? parseInt(localStorage.getItem('streak')) : 0;
-        let lastComplete = localStorage.getItem('lastComplete') ? new Date(localStorage.getItem('lastComplete')) : null;
+    const quotes = [
+      "You're on fire, future ranker!",
+      "Every checkbox is one step closer to IIT.",
+      "You’ve got the grit, now let’s get the rank!",
+      "Consistency creates toppers, and you’re consistent AF.",
+      "One more day closer to CS @ IIT B, Lurang."
+    ];
 
-        function updateProgress() {
-            const total = checkboxes.length;
-            const completed = Array.from(checkboxes).filter(cb => cb.checked).length;
-            const percent = (completed / total) * 100;
-            progressFill.style.width = `${percent}%`;
+    let streak = localStorage.getItem('streak') ? parseInt(localStorage.getItem('streak')) : 0;
+    let lastComplete = localStorage.getItem('lastComplete') ? new Date(localStorage.getItem('lastComplete')) : null;
 
-            if (completed === total) {
-                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-                quote.textContent = randomQuote;
-                quote.style.display = 'block';
-                container.style.boxShadow = "0 0 20px #ff99b3";
+    function updateProgress() {
+      const total = checkboxes.length;
+      const completed = Array.from(checkboxes).filter(cb => cb.checked).length;
+      const percent = (completed / total) * 100;
+      progressFill.style.width = `${percent}%`;
 
-                const today = new Date().setHours(0, 0, 0, 0);
-                if (!lastComplete || (today - lastComplete) > 2 * 86400000) {
-                    streak = 1;
-                } else if ((today - lastComplete) > 86400000) {
-                    streak++;
-                }
-                localStorage.setItem('streak', streak);
-                localStorage.setItem('lastComplete', new Date(today));
-                streakCount.textContent = streak;
-            } else {
-                quote.style.display = 'none';
-                container.style.boxShadow = "0 0 20px #ff99b3";
-            }
+      if (completed === total) {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quote.textContent = randomQuote;
+        quote.style.display = 'block';
+        container.style.boxShadow = "0 0 20px #ff99b3";
+
+        const today = new Date().setHours(0, 0, 0, 0);
+        if (!lastComplete || (today - lastComplete) > 2 * 86400000) {
+          streak = 1;
+        } else if ((today - lastComplete) > 86400000) {
+          streak++;
         }
+        localStorage.setItem('streak', streak);
+        localStorage.setItem('lastComplete', new Date(today));
+        streakCount.textContent = streak;
+      } else {
+        quote.style.display = 'none';
+        container.style.boxShadow = "0 0 20px #ff99b3";
+      }
+    }
 
-        checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+    checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
 
-        window.onload = () => {
-            streakCount.textContent = streak;
-        };
-    </script>
+    window.onload = () => {
+      streakCount.textContent = streak;
+    };
+  </script>
 </body>
 </html>
